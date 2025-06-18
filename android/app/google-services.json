@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "319205630882",
+    "project_id": "airespies",
+    "storage_bucket": "airespies.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319205630882:android:711140df30e0953c9588fb",
+        "android_client_info": {
+          "package_name": "com.airespies"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRu5qdHeQhQlU2blo9_l9ICaSxjAa6XcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
