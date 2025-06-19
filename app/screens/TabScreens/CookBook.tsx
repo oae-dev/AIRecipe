@@ -4,7 +4,7 @@ import { FetchData } from '../../../services/Firebase';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { screens } from '../screenNames/screenNames';
-import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackRootProps } from '../navigators/Starting';
 import Myloader from '../../components/loader';
 

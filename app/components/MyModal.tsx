@@ -15,11 +15,11 @@ const MyModal = ({visiblility,setVisibility}:modalproptype) => {
             <Image source={require('../../assets/icons/cross.png')} style={styles.crossIcon}/>
           </TouchableOpacity>
           <Text style={styles.modalInfo}>Please Enter Your Data</Text>
-            
+
         </View>
 
       </View>
-        
+
     </Modal>
   );
 };
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   modal:{
     flex:1,
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
   },
   modalouter:{
     height:200,
@@ -38,11 +38,11 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     borderRadius:20,
-    elevation:4
+    elevation:4,
   },
   modalInfo:{
     fontSize:20,
-    fontFamily:'Outfit-Bold'
+    fontFamily:'Outfit-Bold',
   },
   crossView:{
     height:50,
@@ -51,13 +51,13 @@ const styles = StyleSheet.create({
     alignItems:'center',
     position:'absolute',
     top:10,
-    right:10
-    
+    right:10,
+
   },
   crossIcon:{
     height:'70%',
     width:'70%',
-  }
+  },
 });
 
 export default MyModal;

@@ -4,7 +4,7 @@ import MyButton from '../components/MyButton';
 import colors from '../../services/colors';
 import { useNavigation } from '@react-navigation/native';
 import { screens } from './screenNames/screenNames';
-import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackRootProps } from './navigators/Starting';
 import { useUser } from '../context/authcontext';
 

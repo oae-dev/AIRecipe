@@ -10,6 +10,7 @@ import SignUpScreen from '../SignUpScreen';
 import { AuthcontextProvider } from '../../context/authcontext';
 import TabHome from './TabHome';
 import Detail from '../Detail';
+import { VegSwitchContextProvider } from '../../context/vegSwitchContext';
 
 
 export type StackRootProps = {
@@ -31,8 +32,10 @@ const Starting = () => {
           <Stack.Screen name={screens.Splash} component={Splash} />
           <Stack.Screen name={screens.Login} component={LoginScreen} />
           <Stack.Screen name={screens.SignUp} component={SignUpScreen} />
-          <Stack.Screen name={screens.HomeTabs} component={TabHome} />
-          <Stack.Screen name={screens.Detail} component={Detail} />
+          <VegSwitchContextProvider>
+            <Stack.Screen name={screens.HomeTabs} component={TabHome} />
+            <Stack.Screen name={screens.Detail} component={Detail} />
+          </VegSwitchContextProvider>
         </Stack.Navigator>
       </NavigationContainer>
     </AuthcontextProvider>

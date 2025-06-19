@@ -1,4 +1,4 @@
-import { TextInput, StyleSheet, View, Text } from 'react-native';
+import { TextInput, StyleSheet, View } from 'react-native';
 import React from 'react';
 
 type AuthTextFieldprops = {
@@ -18,7 +18,7 @@ const AuthTextField = ({ value, onchange, placeholder, correctData, changeOnFouc
             style={[styles.outer,correctData ? styles.wrongOuterColor : styles.fineOuterColor  ]}
             onChangeText={onchange}
             onFocus={changeOnFoucs}/>
-        
+
         </View>
 
     );

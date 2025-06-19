@@ -1,10 +1,10 @@
-import { View, Text, Image, StyleSheet, Alert, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ToastAndroid } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ToastAndroid } from 'react-native';
 import React, { useState } from 'react';
 import AuthTextField from '../components/TextField';
 import MyButton from '../components/MyButton';
 import { getAuth, signInWithEmailAndPassword } from '@react-native-firebase/auth';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackRootProps } from './navigators/Starting';
 import { screens } from './screenNames/screenNames';
 import MyModal from '../components/MyModal';
@@ -23,7 +23,7 @@ const LoginScreen = () => {
     Keyboard.dismiss();
     signInWithEmailAndPassword(getAuth(), email, password)
       .then(() => {
-        ToastAndroid.show('Login Success', ToastAndroid.SHORT)
+        ToastAndroid.show('Login Success', ToastAndroid.SHORT);
         navigation.replace(screens.HomeTabs);
       })
       .catch(
@@ -32,7 +32,7 @@ const LoginScreen = () => {
           if (error?.code === 'auth/invalid-email') {
             setwrongEmail(true);
             setwrongPassword(true);
-            ToastAndroid.show('Please Enter Valid Email & Password', ToastAndroid.SHORT)
+            ToastAndroid.show('Please Enter Valid Email & Password', ToastAndroid.SHORT);
           }
           if (error?.code === 'auth/wrong-password') {
             setwrongPassword(true);
@@ -40,7 +40,7 @@ const LoginScreen = () => {
           if (error?.code === 'auth/invalid-credential') {
             setwrongEmail(true);
             setwrongPassword(true);
-            ToastAndroid.show('Please Fill Correct Information', ToastAndroid.SHORT)
+            ToastAndroid.show('Please Fill Correct Information', ToastAndroid.SHORT);
           }
 
         }
@@ -55,7 +55,7 @@ const LoginScreen = () => {
 
         <View style={styles.fieds}>
           <View>
-            <AuthTextField value={email} onchange={setEmail} placeholder="Email" 
+            <AuthTextField value={email} onchange={setEmail} placeholder="Email"
             correctData={wrongEmail} changeOnFoucs={() => {
               setwrongEmail(false);
               setwrongPassword(false);
@@ -65,7 +65,7 @@ const LoginScreen = () => {
             }
           </View>
           <View>
-            <AuthTextField value={password} onchange={setPassword} placeholder="Password" 
+            <AuthTextField value={password} onchange={setPassword} placeholder="Password"
             correctData={wrongPassword} changeOnFoucs={() => {
               setwrongEmail(false);
               setwrongPassword(false);
@@ -76,7 +76,7 @@ const LoginScreen = () => {
           </View>
         </View>
         {
-          password == '' || email == '' ?
+          password === '' || email === '' ?
             <View style={styles.buttonWidth}>
               <MyButton title="Sign In" color="#7a7746" onpress={() => setmodal(true)} />
             </View>

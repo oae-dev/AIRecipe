@@ -1,5 +1,5 @@
 import {StyleSheet } from 'react-native';
-import React, {useState } from 'react';
+import React from 'react';
 import HomeHeader from '../../components/HomeHeader';
 import colors from '../../../services/colors';
 import GenrateRecipies from '../../components/GenrateRecipies';
@@ -9,15 +9,15 @@ import Categaries from '../../components/Categaries';
 
 const Home = () => {
 
-  const [veg,setveg] = useState<boolean>(false);
+
 
   return (
     <ScrollView style={styles.container}>
 
       {/* HomeHeader */}
-      <HomeHeader veg={veg} setveg={setveg}/>
+      <HomeHeader/>
       {/* Resipies genrateer */}
-      <GenrateRecipies veg={veg}/>
+      <GenrateRecipies/>
       {/* catagories */}
       <Categaries />
 

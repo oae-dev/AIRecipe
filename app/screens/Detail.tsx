@@ -6,7 +6,7 @@ import DetailIntro from '../components/DetailIntro';
 import Ingredients from '../components/Ingredients';
 import Steps from '../components/Steps';
 import { AddData, DeleteFav, FetchData } from '../../services/Firebase';
-import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackRootProps } from './navigators/Starting';
 
 
@@ -22,7 +22,7 @@ const Detail = () => {
   const [fav, setfav] = useState<boolean>(false);
   console.log('DETAIL OBJECTIVE DATA -', objectiveData);
 
-  const [DataBaseRecipieData,setDatabaseRecipieData] = useState<any>(null);
+  const [DataBaseRecipieData,setDatabaseRecipieData] = useState<any[]>([]);
 
 
   const GetData = async ()=>{
@@ -35,24 +35,22 @@ const Detail = () => {
       GetData();
     },[]);
 
+
     useEffect(() => {
   if (DataBaseRecipieData) {
-    CheckFav();
-
-  }
-}, [DataBaseRecipieData]);
-
-    const CheckFav = () => {
-  const isFav = DataBaseRecipieData.some(
+    const isFav = DataBaseRecipieData.some(
     (item: any) => item.recipeName === objectiveData.recipeName
   );
   setfav(isFav);
-};
+  }
+}, [DataBaseRecipieData, objectiveData.recipeName]);
+
+
 
   return (
 
     <ScrollView style={styles.container}>
-      <View style={{height:300}}>
+      <View style={styles.imgcontainer}>
 
           <TouchableOpacity
             onPress={() => Navigation.goBack()}
@@ -99,6 +97,9 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingBottom: 50,
   },
+  imgcontainer:{
+    height:300,
+  },
   favicon: {
     height: 70, width: 70,
     backgroundColor: 'green', position: 'absolute',
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
   screenImg:{
   height:'100%',
   width:'100%',
-  borderRadius:30
+  borderRadius:30,
   },
 });
 

@@ -1,17 +1,14 @@
 import { View, Text, StyleSheet, Switch } from 'react-native';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useUser } from '../context/authcontext';
 import colors from '../../services/colors';
+import { useVeg} from '../context/vegSwitchContext';
 
 
-type HomeHeaderType = {
-    veg: boolean;
-    setveg: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const HomeHeader = ({ veg, setveg }: HomeHeaderType) => {
+const HomeHeader = () => {
     const { user } = useUser();
-
+    const {veg,setveg} = useContext(useVeg);
     const username = user?.email?.split('@')[0] ?? '';
     const lettersOnly = username.match(/^[A-Za-z]+/)?.[0] ?? '';
     return (

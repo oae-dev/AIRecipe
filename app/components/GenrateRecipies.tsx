@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, TextInput, FlatList, TouchableOpacity } from 'react-native';
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import colors from '../../services/colors';
 import MyButton from './MyButton';
 import ModalAI from '../../services/gemApi';
@@ -7,19 +7,15 @@ import { GENERATE_COMPLETE_RECIPE_PROMPT, GENERATE_OPTION_RECIPE_PROMPT } from '
 import ActionSheet, { ActionSheetRef } from 'react-native-actions-sheet';
 import Myloader from './loader';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { screens } from '../screens/screenNames/screenNames';
 import { StackRootProps } from '../screens/navigators/Starting';
+import { useVeg } from '../context/vegSwitchContext';
 
 
 
-
-type GenrateRecipiesPropsType = {
-  veg: boolean
-}
-
-
-const GenrateRecipies = ({ veg }: GenrateRecipiesPropsType) => {
+const GenrateRecipies = () => {
+  const {veg} = useContext(useVeg);
   const Navigation = useNavigation<NativeStackNavigationProp<StackRootProps>>();
   const [search, setSearch] = useState<string | undefined>();
   const [loading, setLoading] = useState(false);

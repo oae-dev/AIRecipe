@@ -21,7 +21,7 @@ const Steps = (steps: any) => {
           })
         }
       </View>
-      <GenrateRecipies veg={true} />
+      <GenrateRecipies/>
       <View style={styles.devider} />
     </View>
   );
