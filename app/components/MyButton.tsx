@@ -1,18 +1,19 @@
-import { Text, TouchableOpacity, StyleSheet} from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, DimensionValue} from 'react-native';
 import React from 'react';
 import colors from '../../services/colors';
 
 type MyButtonProps ={
     title:string,
-    color:string,
-    onpress: ()=> void
+    color:string | undefined,
+    onpress: ()=> void,
+    btnwidth: DimensionValue
 }
 
-const MyButton = ({title,color,onpress}:MyButtonProps) => {
+const MyButton = ({title,color,onpress,btnwidth}:MyButtonProps) => {
   return (
     <TouchableOpacity
     onPress={onpress}
-    style={[styles.btn,{backgroundColor:color}]}>
+    style={[styles.btn,{backgroundColor:color,width:btnwidth}]}>
             <Text style={styles.btntext}>{title}</Text>
     </TouchableOpacity>
   );

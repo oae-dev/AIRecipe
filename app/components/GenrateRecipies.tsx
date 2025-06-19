@@ -81,9 +81,9 @@ const GenrateRecipies = () => {
         numberOfLines={3}
         style={styles.search}
       />
-      <View style={styles.btn}>
-        <MyButton title={loading ? 'Loading...' : 'Genrate Recipe'} color="green" onpress={() => genrateRecipies(search)} />
-      </View>
+
+        <MyButton title={loading ? 'Loading...' : 'Genrate Recipe'} color="green" onpress={() => genrateRecipies(search)} btnwidth={'60%'} />
+
 
       <ActionSheet ref={ActionSheetref}>
         <View>
@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
     padding: 15,
     textAlignVertical: 'top',
     fontSize: 17,
+    marginBottom:10
   },
   ActionSheetHeading: {
     padding: 25,

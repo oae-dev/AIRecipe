@@ -78,11 +78,11 @@ const LoginScreen = () => {
         {
           password === '' || email === '' ?
             <View style={styles.buttonWidth}>
-              <MyButton title="Sign In" color="#7a7746" onpress={() => setmodal(true)} />
+              <MyButton title="Sign In" color="#7a7746" onpress={() => setmodal(true)} btnwidth={'90%'}/>
             </View>
             :
             <View style={styles.buttonWidth}>
-              <MyButton title="Sign In" color={wrongPassword ? 'red' : '#7a7746'} onpress={loginUser} />
+              <MyButton title="Sign In" color={wrongPassword ? 'red' : '#7a7746'} onpress={loginUser} btnwidth={'90%'} />
             </View>
 
         }

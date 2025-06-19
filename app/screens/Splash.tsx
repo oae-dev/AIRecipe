@@ -39,7 +39,7 @@ const {user} = useUser();
       <View style={styles.cover}>
         <Text style={styles.title}>Cookmate AI 🧆🔎 | Find, Create & Enjoy Delicious Recipes!</Text>
         <Text style={styles.dis}>Generate Delicious Respies in seconds with the power of AI 🍔 ✨</Text>
-        <MyButton title="SIGN IN" color="green" onpress={() =>
+        <MyButton title="SIGN IN" color="green" btnwidth={'90%'} onpress={() =>
           {if(user != null){
 
               Navigation.replace(screens.HomeTabs);

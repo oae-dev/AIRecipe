@@ -12,7 +12,7 @@ const Profile = () => {
   return (
     <View style={style.container}>
 
-      <MyButton color="red" title="Sign Out" onpress={() => { signOut(getAuth()); Navigation.replace(screens.Splash); }} />
+      <MyButton color="red" title="Sign Out" onpress={() => { signOut(getAuth()); Navigation.replace(screens.Splash); }} btnwidth={'50%'} />
     </View>
   );
 };
@@ -22,6 +22,7 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems:'center',
   },
 });
 export default Profile;

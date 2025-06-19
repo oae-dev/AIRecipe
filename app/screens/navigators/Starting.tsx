@@ -26,18 +26,19 @@ const Stack = createStackNavigator<StackRootProps>();
 const Starting = () => {
   return (
     <AuthcontextProvider>
-
+      <VegSwitchContextProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name={screens.Splash} component={Splash} />
           <Stack.Screen name={screens.Login} component={LoginScreen} />
           <Stack.Screen name={screens.SignUp} component={SignUpScreen} />
-          <VegSwitchContextProvider>
+
             <Stack.Screen name={screens.HomeTabs} component={TabHome} />
             <Stack.Screen name={screens.Detail} component={Detail} />
-          </VegSwitchContextProvider>
+
         </Stack.Navigator>
       </NavigationContainer>
+      </VegSwitchContextProvider>
     </AuthcontextProvider>
   );
 };
