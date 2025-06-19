@@ -15,7 +15,7 @@ const DetailIntro = ({ recipeData }: any) => {
             <Text style={style.discription}>{RecipeDataObject?.description}</Text>
             <View style={{ flexDirection: 'row' }}>
                 <View style={style.inforaper}>
-                    <Image source={require('../../assets/leaf.png')} style={style.infoimg} />
+                    <Image source={require('../../assets/icons/leaf.png')} style={style.infoimg} />
                     <View>
                         <Text style={style.info}>{RecipeDataObject?.calories} Cal</Text>
                         <Text style={style.infoDis}>Calories</Text>
@@ -23,7 +23,7 @@ const DetailIntro = ({ recipeData }: any) => {
                 </View>
 
                 <View style={style.inforaper}>
-                    <Image source={require('../../assets/timer.png')} style={style.infoimg} />
+                    <Image source={require('../../assets/icons/timer.png')} style={style.infoimg} />
                     <View>
                         <Text style={style.info}>{RecipeDataObject?.cookTime} Min</Text>
                         <Text style={style.infoDis}>Timer</Text>
@@ -31,7 +31,7 @@ const DetailIntro = ({ recipeData }: any) => {
                 </View>
 
                 <View style={style.inforaper}>
-                    <Image source={require('../../assets/serve.png')} style={style.infoimg} />
+                    <Image source={require('../../assets/icons/serve.png')} style={style.infoimg} />
                     <View>
                         <Text style={style.info}>{RecipeDataObject?.serveTo} Serve</Text>
                         <Text style={style.infoDis}>serveTo</Text>

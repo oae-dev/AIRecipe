@@ -12,7 +12,7 @@ const MyModal = ({visiblility,setVisibility}:modalproptype) => {
       <View style={styles.modal}>
         <View style={styles.modalouter}>
           <TouchableOpacity onPress={()=>setVisibility(false)} style={styles.crossView}>
-            <Image source={require('../../assets/cross.png')} style={styles.crossIcon}/>
+            <Image source={require('../../assets/icons/cross.png')} style={styles.crossIcon}/>
           </TouchableOpacity>
           <Text style={styles.modalInfo}>Please Enter Your Data</Text>
             

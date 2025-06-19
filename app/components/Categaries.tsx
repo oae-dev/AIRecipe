@@ -9,35 +9,35 @@ type catlisttype = {
 
 const catlist: catlisttype[] = [
   {
-    image: require('../../assets/fd1.png'),
+    image: require('../../assets/Images/home/fd1.png'),
     title: 'breakfast',
   },
   {
-    image: require('../../assets/fd2.png'),
+    image: require('../../assets/Images/home/fd2.png'),
     title: 'breakfast',
   },
   {
-    image: require('../../assets/fd3.png'),
+    image: require('../../assets/Images/home/fd3.png'),
     title: 'breakfast',
   },
   {
-    image: require('../../assets/fd4.png'),
+    image: require('../../assets/Images/home/fd4.png'),
     title: 'breakfast',
   },
   {
-    image: require('../../assets/fd5.png'),
+    image: require('../../assets/Images/home/fd5.png'),
     title: 'breakfast',
   },
   {
-    image: require('../../assets/fd6.png'),
+    image: require('../../assets/Images/home/fd6.png'),
     title: 'breakfast',
   },
   {
-    image: require('../../assets/fd7.png'),
+    image: require('../../assets/Images/home/fd7.png'),
     title: 'breakfast',
   },
   {
-    image: require('../../assets/fd8.png'),
+    image: require('../../assets/Images/home/fd8.png'),
     title: 'breakfast',
   },
 ];

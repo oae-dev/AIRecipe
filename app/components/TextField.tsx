@@ -18,9 +18,7 @@ const AuthTextField = ({ value, onchange, placeholder, correctData, changeOnFouc
             style={[styles.outer,correctData ? styles.wrongOuterColor : styles.fineOuterColor  ]}
             onChangeText={onchange}
             onFocus={changeOnFoucs}/>
-            
-
-
+        
         </View>
 
     );

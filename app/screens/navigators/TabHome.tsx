@@ -45,16 +45,16 @@ const TabHome = () => {
 };
 
 const renderHomeIcon = ({ focused, size }: any) => (
-    <TabIcon source={require('../../../assets/i1.png')} focused={focused} size={size} />
+    <TabIcon source={require('../../../assets/icons/i1.png')} focused={focused} size={size} />
 );
 const renderExploreIcon = ({ focused, size }: any) => (
-    <TabIcon source={require('../../../assets/i2.png')} focused={focused} size={size} />
+    <TabIcon source={require('../../../assets/icons/i2.png')} focused={focused} size={size} />
 );
 const renderCookbookIcon = ({ focused, size }: any) => (
-    <TabIcon source={require('../../../assets/i3.png')} focused={focused} size={size} />
+    <TabIcon source={require('../../../assets/icons/i3.png')} focused={focused} size={size} />
 );
 const renderProfileIcon = ({ focused, size }: any) => (
-    <TabIcon source={require('../../../assets/i4.png')} focused={focused} size={size} />
+    <TabIcon source={require('../../../assets/icons/i4.png')} focused={focused} size={size} />
 );
 
 

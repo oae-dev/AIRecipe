@@ -52,13 +52,13 @@ const Detail = () => {
   return (
 
     <ScrollView style={styles.container}>
-      <View>
+      <View style={{height:300}}>
 
           <TouchableOpacity
             onPress={() => Navigation.goBack()}
 
             style={styles.back}>
-              <Image source={require('../../assets/back.png')} style={styles.backimg} />
+              <Image source={require('../../assets/icons/back.png')} style={styles.backimg} />
             </TouchableOpacity>
 
         <Image source={require('../../assets/detailimg.png')}
@@ -72,7 +72,7 @@ const Detail = () => {
             }}
 
             style={styles.favicon}>
-              <Image source={require('../../assets/i1.png')} style={styles.fabimg} />
+              <Image source={require('../../assets/icons/i1.png')} style={styles.fabimg} />
             </TouchableOpacity>
             :
             <TouchableOpacity
@@ -82,7 +82,7 @@ const Detail = () => {
             }}
 
             style={styles.nonfavicon}>
-              <Image source={require('../../assets/i1.png')} style={styles.nonfavicon} />
+              <Image source={require('../../assets/icons/i1.png')} style={styles.nonfavicon} />
             </TouchableOpacity>
         }
       </View>
@@ -139,7 +139,9 @@ const styles = StyleSheet.create({
     width: 40,
   },
   screenImg:{
-
+  height:'100%',
+  width:'100%',
+  borderRadius:30
   },
 });
 

@@ -11,7 +11,7 @@ const Steps = (steps: any) => {
         {
           steps.steps.map((item: any, index: string) => {
             return (
-              <View key={index} style={steps.steplist}>
+              <View key={index} style={styles.steplist}>
                 <Text style={styles.number}>{index + 1}</Text>
                 <Text style={styles.step}>
                   {item}

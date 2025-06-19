@@ -55,7 +55,7 @@ const SignUpScreen = () => {
     onPress={Keyboard.dismiss}>
 
     <View style={styles.container}>
-      <Image source={require('../../assets/1.jpg')} style={styles.logo} />
+      <Image source={require('../../assets/Images/Splash/1.jpg')} style={styles.logo} />
 
       <View style={styles.fieds}>
         <View>

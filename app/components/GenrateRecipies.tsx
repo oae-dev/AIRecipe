@@ -75,7 +75,7 @@ const GenrateRecipies = ({ veg }: GenrateRecipiesPropsType) => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/pan.gif')} style={styles.img} />
+      <Image source={require('../../assets/Images/home/pan.gif')} style={styles.img} />
       <Text style={styles.heading}>Warm up your stove, and let's get cooking!</Text>
       <Text style={styles.dis}>Make someting for your LOVE</Text>
       <TextInput placeholder="What you want to create? Add Ingredients etc."

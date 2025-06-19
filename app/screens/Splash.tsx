@@ -11,15 +11,15 @@ import { useUser } from '../context/authcontext';
 
 
 const imglist: number[] = [
-  require('../../assets/1.jpg'),
-  require('../../assets/2.jpg'),
-  require('../../assets/3.jpg'),
-  require('../../assets/4.jpg'),
-  require('../../assets/5.jpg'),
-  require('../../assets/6.jpg'),
-  require('../../assets/c1.jpg'),
-  require('../../assets/c2.jpg'),
-  require('../../assets/c3.jpg'),
+  require('../../assets/Images/Splash/1.jpg'),
+  require('../../assets/Images/Splash/2.jpg'),
+  require('../../assets/Images/Splash/3.jpg'),
+  require('../../assets/Images/Splash/4.jpg'),
+  require('../../assets/Images/Splash/5.jpg'),
+  require('../../assets/Images/Splash/6.jpg'),
+  require('../../assets/Images/Splash/c1.jpg'),
+  require('../../assets/Images/Splash/c2.jpg'),
+  require('../../assets/Images/Splash/c3.jpg'),
 
 ];
 
