@@ -1,10 +1,11 @@
 import {StyleSheet } from 'react-native';
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import HomeHeader from '../../components/HomeHeader';
 import colors from '../../../services/colors';
 import GenrateRecipies from '../../components/GenrateRecipies';
 import { ScrollView } from 'react-native-gesture-handler';
 import Categaries from '../../components/Categaries';
+
 
 const Home = () => {
 
@@ -12,6 +13,7 @@ const Home = () => {
 
   return (
     <ScrollView style={styles.container}>
+
       {/* HomeHeader */}
       <HomeHeader veg={veg} setveg={setveg}/>
       {/* Resipies genrateer */}

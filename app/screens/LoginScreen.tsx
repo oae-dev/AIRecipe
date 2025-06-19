@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, Alert, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, Text, Image, StyleSheet, Alert, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ToastAndroid } from 'react-native';
 import React, { useState } from 'react';
 import AuthTextField from '../components/TextField';
 import MyButton from '../components/MyButton';
@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types';
 import { StackRootProps } from './navigators/Starting';
 import { screens } from './screenNames/screenNames';
+import MyModal from '../components/MyModal';
 
 const LoginScreen = () => {
 
@@ -14,27 +15,38 @@ const LoginScreen = () => {
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [wrongEmail, setwrongEmail] = useState<boolean>(false);
+  const [wrongPassword, setwrongPassword] = useState<boolean>(false);
+  const [modal, setmodal] = useState<boolean>(false);
 
   const loginUser = () => {
-
+    Keyboard.dismiss();
     signInWithEmailAndPassword(getAuth(), email, password)
       .then(() => {
-        Alert.alert('succesfull');
+        ToastAndroid.show('Login Success', ToastAndroid.SHORT)
         navigation.replace(screens.HomeTabs);
       })
       .catch(
-        error => {
-          if (error === 'auth/invalid-email') {
-            Alert.alert('Invalid,email');
-          }
-          if (error === 'auth/wrong-password') {
-            Alert.alert('wrong Password');
-          }
+        (error) => {
           console.error(error);
+          if (error?.code === 'auth/invalid-email') {
+            setwrongEmail(true);
+            setwrongPassword(true);
+            ToastAndroid.show('Please Enter Valid Email & Password', ToastAndroid.SHORT)
+          }
+          if (error?.code === 'auth/wrong-password') {
+            setwrongPassword(true);
+          }
+          if (error?.code === 'auth/invalid-credential') {
+            setwrongEmail(true);
+            setwrongPassword(true);
+            ToastAndroid.show('Please Fill Correct Information', ToastAndroid.SHORT)
+          }
+
         }
       );
-
   };
+
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -42,25 +54,53 @@ const LoginScreen = () => {
         <Image source={require('../../assets/1.jpg')} style={styles.logo} />
 
         <View style={styles.fieds}>
-          <AuthTextField value={email} onchange={setEmail} placeholder="Email" />
-          <AuthTextField value={password} onchange={setPassword} placeholder="Password" />
+          <View>
+            <AuthTextField value={email} onchange={setEmail} placeholder="Email" 
+            correctData={wrongEmail} changeOnFoucs={() => {
+              setwrongEmail(false);
+              setwrongPassword(false);
+            }} />
+            {
+              wrongEmail ? <Text style={styles.wrongText}>Worng Email</Text> : null
+            }
+          </View>
+          <View>
+            <AuthTextField value={password} onchange={setPassword} placeholder="Password" 
+            correctData={wrongPassword} changeOnFoucs={() => {
+              setwrongEmail(false);
+              setwrongPassword(false);
+            }} />
+            {
+              wrongPassword ? <Text style={styles.wrongText}>Worng Password</Text> : null
+            }
+          </View>
         </View>
+        {
+          password == '' || email == '' ?
+            <View style={styles.buttonWidth}>
+              <MyButton title="Sign In" color="#7a7746" onpress={() => setmodal(true)} />
+            </View>
+            :
+            <View style={styles.buttonWidth}>
+              <MyButton title="Sign In" color={wrongPassword ? 'red' : '#7a7746'} onpress={loginUser} />
+            </View>
 
-        <View style={styles.buttonWidth}>
-          <MyButton title="Sign In" color="#7a7746" onpress={loginUser} />
-        </View>
+        }
+
 
         <TouchableOpacity
           onPress={() => navigation.replace(screens.SignUp)}>
           <Text>Don't have an account? Sign up</Text>
 
         </TouchableOpacity>
+
+        <MyModal visiblility={modal} setVisibility={setmodal} />
       </View>
     </TouchableWithoutFeedback>
   );
 };
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -79,6 +119,9 @@ const styles = StyleSheet.create({
   },
   buttonWidth: {
     width: '80%',
+  },
+  wrongText: {
+    color: 'red',
   },
 });
 
