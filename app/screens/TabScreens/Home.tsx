@@ -1,4 +1,4 @@
-import {StyleSheet } from 'react-native';
+import {FlatList, StyleSheet } from 'react-native';
 import React from 'react';
 import HomeHeader from '../../components/HomeHeader';
 import colors from '../../../services/colors';
@@ -12,7 +12,10 @@ const Home = () => {
 
 
   return (
-    <ScrollView style={styles.container}>
+    <FlatList data={[]}
+    style={styles.container}
+    ListHeaderComponent={
+       <ScrollView>
 
       {/* HomeHeader */}
       <HomeHeader/>
@@ -22,6 +25,10 @@ const Home = () => {
       <Categaries />
 
     </ScrollView>
+    }
+    renderItem={null}
+    />
+
   );
 };
 

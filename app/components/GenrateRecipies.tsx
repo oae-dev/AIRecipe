@@ -15,7 +15,7 @@ import { useVeg } from '../context/vegSwitchContext';
 
 
 const GenrateRecipies = () => {
-  const {veg} = useContext(useVeg);
+  const { veg } = useContext(useVeg);
   const Navigation = useNavigation<NativeStackNavigationProp<StackRootProps>>();
   const [search, setSearch] = useState<string | undefined>();
   const [loading, setLoading] = useState(false);
@@ -82,7 +82,7 @@ const GenrateRecipies = () => {
         style={styles.search}
       />
 
-        <MyButton title={loading ? 'Loading...' : 'Genrate Recipe'} color="green" onpress={() => genrateRecipies(search)} btnwidth={'60%'} />
+      <MyButton title={loading ? 'Loading...' : 'Genrate Recipe'} color="green" onpress={() => genrateRecipies(search)} btnwidth={'60%'} />
 
 
       <ActionSheet ref={ActionSheetref}>
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   search: {
-    height: 110,
+    height: 100,
     backgroundColor: colors.White,
     borderRadius: 15,
     width: '100%',
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     padding: 15,
     textAlignVertical: 'top',
     fontSize: 17,
-    marginBottom:10
+    marginBottom: 10,
   },
   ActionSheetHeading: {
     padding: 25,
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Outfit-Regular',
   },
   btn: {
-    marginTop:10,
+    marginTop: 10,
   },
   divider: {
     height: 2,

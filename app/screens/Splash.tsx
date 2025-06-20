@@ -32,14 +32,16 @@ const {user} = useUser();
 
   return (
     <View style={styles.container}>
+      <View style={{transform: [{ rotate: '-5deg' }]}}>
       <MarqueeList data={imglist} speed={2} />
       <MarqueeList data={imglist} speed={1.5} />
       <MarqueeList data={imglist} speed={1.7} />
+      </View>
 
       <View style={styles.cover}>
         <Text style={styles.title}>Cookmate AI 🧆🔎 | Find, Create & Enjoy Delicious Recipes!</Text>
         <Text style={styles.dis}>Generate Delicious Respies in seconds with the power of AI 🍔 ✨</Text>
-        <MyButton title="SIGN IN" color="green" btnwidth={'90%'} onpress={() =>
+        <MyButton title="SIGN IN" color="green" btnwidth={'100%'} onpress={() =>
           {if(user != null){
 
               Navigation.replace(screens.HomeTabs);

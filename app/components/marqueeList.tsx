@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
         height: 170,
         justifyContent: 'center',
         overflow: 'hidden', margin: 4,
-        transform: [{ rotate: '-5deg' }],
     },
     img: {
         width: '100%',

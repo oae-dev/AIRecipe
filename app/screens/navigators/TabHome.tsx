@@ -9,7 +9,7 @@ import Home from '../TabScreens/Home';
 import { TabIcon } from './tabIcon';
 
 
-type TabRootTypes = {
+export type TabRootTypes = {
     Home: undefined,
     Explore: undefined,
     CookBook: undefined,

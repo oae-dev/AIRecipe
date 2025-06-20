@@ -32,7 +32,7 @@ const LoginScreen = () => {
           if (error?.code === 'auth/invalid-email') {
             setwrongEmail(true);
             setwrongPassword(true);
-            ToastAndroid.show('Please Enter Valid Email & Password', ToastAndroid.SHORT);
+
           }
           if (error?.code === 'auth/wrong-password') {
             setwrongPassword(true);
@@ -40,7 +40,7 @@ const LoginScreen = () => {
           if (error?.code === 'auth/invalid-credential') {
             setwrongEmail(true);
             setwrongPassword(true);
-            ToastAndroid.show('Please Fill Correct Information', ToastAndroid.SHORT);
+
           }
 
         }

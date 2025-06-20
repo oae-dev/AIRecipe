@@ -80,7 +80,7 @@ const Detail = () => {
             }}
 
             style={styles.nonfavicon}>
-              <Image source={require('../../assets/icons/i1.png')} style={styles.nonfavicon} />
+              <Image source={require('../../assets/icons/i1.png')} style={styles.nonfavImg} />
             </TouchableOpacity>
         }
       </View>
